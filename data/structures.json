@@ -1,0 +1,421 @@
+[
+  {
+    "id": "storage",
+    "name": "Permanent Storage",
+    "desc": "A place to stash materials and goods in this tile.",
+    "workersRequired": 0,
+    "levels": [
+      {
+        "level": 1,
+        "name": "Hole in the Ground",
+        "storageCap": 80,
+        "cost": [
+          {
+            "id": "dirt",
+            "qty": 20
+          },
+          {
+            "id": "wood_plank",
+            "qty": 10
+          },
+          {
+            "id": "nails",
+            "qty": 10
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "name": "Barn",
+        "storageCap": 160,
+        "cost": [
+          {
+            "id": "wood_plank",
+            "qty": 30
+          },
+          {
+            "id": "nails",
+            "qty": 20
+          },
+          {
+            "id": "glue",
+            "qty": 10
+          },
+          {
+            "id": "rope_strong",
+            "qty": 5
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "name": "Warehouse",
+        "storageCap": 300,
+        "cost": [
+          {
+            "id": "scrap_metal",
+            "qty": 40
+          },
+          {
+            "id": "raw_metal",
+            "qty": 30
+          },
+          {
+            "id": "wiring",
+            "qty": 10
+          },
+          {
+            "id": "nails",
+            "qty": 30
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "farm",
+    "name": "Farm",
+    "desc": "Grows crops over time. Produces once per in-game day when active.",
+    "workersRequired": 1,
+    "crops": [
+      "corn",
+      "wheat",
+      "vegetable",
+      "berry"
+    ],
+    "seedByCrop": {
+      "corn": "corn_seed",
+      "wheat": "wheat_seed",
+      "vegetable": "vegetable_seed",
+      "berry": "berry_seed"
+    },
+    "initialSupplies": {
+      "dirt": 10,
+      "seeds": 10,
+      "water": 50
+    },
+    "dirtItemId": "dirt",
+    "waterItemId": "water_clean",
+    "waterPerCycle": 10,
+    "yieldPerDayByLevel": {
+      "1": 16,
+      "2": 32,
+      "3": 48
+    },
+    "levels": [
+      {
+        "level": 1,
+        "name": "Small Farm",
+        "storageCap": 60,
+        "cost": [
+          {
+            "id": "wood_plank",
+            "qty": 12
+          },
+          {
+            "id": "nails",
+            "qty": 12
+          },
+          {
+            "id": "dirt",
+            "qty": 30
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "name": "Medium Farm",
+        "storageCap": 90,
+        "cost": [
+          {
+            "id": "wood_plank",
+            "qty": 25
+          },
+          {
+            "id": "nails",
+            "qty": 20
+          },
+          {
+            "id": "rope_strong",
+            "qty": 5
+          },
+          {
+            "id": "dirt",
+            "qty": 40
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "name": "Large Farm",
+        "storageCap": 120,
+        "cost": [
+          {
+            "id": "wood_plank",
+            "qty": 45
+          },
+          {
+            "id": "nails",
+            "qty": 30
+          },
+          {
+            "id": "wiring",
+            "qty": 5
+          },
+          {
+            "id": "dirt",
+            "qty": 60
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "stable",
+    "name": "Stable",
+    "desc": "Keeps animals and will later enable remote trade shipments.",
+    "workersRequired": 1,
+    "levels": [
+      {
+        "level": 1,
+        "name": "Stable",
+        "storageCap": 120,
+        "cost": [
+          {
+            "id": "wood_plank",
+            "qty": 25
+          },
+          {
+            "id": "nails",
+            "qty": 20
+          },
+          {
+            "id": "rope_strong",
+            "qty": 10
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water_reservoir",
+    "name": "Water Reservoir",
+    "desc": "Stores clean water only.",
+    "workersRequired": 0,
+    "levels": [
+      {
+        "level": 1,
+        "name": "Small Reservoir",
+        "storageCap": 200,
+        "cost": [
+          {
+            "id": "scrap_metal",
+            "qty": 20
+          },
+          {
+            "id": "glue",
+            "qty": 10
+          },
+          {
+            "id": "nails",
+            "qty": 10
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "name": "Medium Reservoir",
+        "storageCap": 400,
+        "cost": [
+          {
+            "id": "scrap_metal",
+            "qty": 40
+          },
+          {
+            "id": "raw_metal",
+            "qty": 10
+          },
+          {
+            "id": "glue",
+            "qty": 20
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "name": "Large Reservoir",
+        "storageCap": 800,
+        "cost": [
+          {
+            "id": "raw_metal",
+            "qty": 30
+          },
+          {
+            "id": "wiring",
+            "qty": 5
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 60
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water_pump",
+    "name": "Water Pump",
+    "desc": "Produces clean water each in-game day. Outputs to a reservoir if built.",
+    "workersRequired": 1,
+    "waterItemId": "water_clean",
+    "productionPerDayByLevel": {
+      "1": 50,
+      "2": 100,
+      "3": 150
+    },
+    "levels": [
+      {
+        "level": 1,
+        "name": "Basic Pump",
+        "storageCap": 40,
+        "cost": [
+          {
+            "id": "scrap_metal",
+            "qty": 15
+          },
+          {
+            "id": "wiring",
+            "qty": 5
+          },
+          {
+            "id": "glue",
+            "qty": 5
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "name": "Improved Pump",
+        "storageCap": 60,
+        "cost": [
+          {
+            "id": "raw_metal",
+            "qty": 10
+          },
+          {
+            "id": "wiring",
+            "qty": 10
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 20
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "name": "Industrial Pump",
+        "storageCap": 80,
+        "cost": [
+          {
+            "id": "raw_metal",
+            "qty": 20
+          },
+          {
+            "id": "wiring",
+            "qty": 20
+          },
+          {
+            "id": "car_parts",
+            "qty": 5
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 35
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "radio_tower",
+    "name": "Radio Tower",
+    "desc": "A tall tower that will later improve scouting and enable long-range contact.",
+    "workersRequired": 1,
+    "levels": [
+      {
+        "level": 1,
+        "name": "Radio Tower",
+        "storageCap": 20,
+        "cost": [
+          {
+            "id": "raw_metal",
+            "qty": 30
+          },
+          {
+            "id": "wiring",
+            "qty": 20
+          },
+          {
+            "id": "car_parts",
+            "qty": 10
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 20
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "name": "Upgraded Tower",
+        "storageCap": 30,
+        "cost": [
+          {
+            "id": "raw_metal",
+            "qty": 50
+          },
+          {
+            "id": "wiring",
+            "qty": 40
+          },
+          {
+            "id": "car_parts",
+            "qty": 20
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 35
+          }
+        ]
+      },
+      {
+        "level": 3,
+        "name": "Broadcast Tower",
+        "storageCap": 40,
+        "cost": [
+          {
+            "id": "raw_metal",
+            "qty": 80
+          },
+          {
+            "id": "wiring",
+            "qty": 60
+          },
+          {
+            "id": "car_parts",
+            "qty": 35
+          },
+          {
+            "id": "scrap_metal",
+            "qty": 60
+          }
+        ]
+      }
+    ]
+  }
+]

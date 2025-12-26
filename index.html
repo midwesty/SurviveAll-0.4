@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>RV Rover — Dashboard</title>
+  <meta name="description" content="RV Rover: a data-driven survival dashboard prototype (offline progression, crafting, jobs, crew, storage)." />
+
+  <!-- iOS nicer fullscreen behavior (optional but helpful) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Your CSS (we’ll build this next) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- If you add a favicon later, keep this -->
+  <!-- <link rel="icon" href="favicon.ico" /> -->
+</head>
+
+<body>
+  <!--
+    RV Rover (Option B)
+    - Your current game.js builds the entire UI dynamically and appends it to <body>.
+    - This index.html stays simple: it only loads CSS + game.js and provides a tiny
+      "loading" fallback so you don’t stare at a blank page if something fails.
+  -->
+
+  <noscript>
+    <div style="padding:16px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+      <h1 style="margin:0 0 8px 0;">RV Rover</h1>
+      <p style="margin:0;">
+        This game requires JavaScript to run. Please enable JavaScript and reload the page.
+      </p>
+    </div>
+  </noscript>
+
+  <!-- Lightweight pre-boot splash (game.js will replace the experience by adding UI to body) -->
+  <div id="bootSplash" aria-live="polite">
+    <div class="bootSplashInner">
+      <div class="bootTitle">RV Rover</div>
+      <div class="bootSub">Loading dashboard…</div>
+      <div class="bootHint">
+        If this hangs, check that <code>game.js</code> and <code>style.css</code> are in the same folder as this file.
+        JSON data files (optional) should be in <code>/data/*.json</code>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Main script -->
+  <script src="game.js" defer></script>
+
+  <!-- Minimal inline styles JUST for the splash (so you always see something even before style.css is done) -->
+  <style>
+    #bootSplash {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #0f0f12;
+      color: #eaeaf0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .bootSplashInner {
+      max-width: 720px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 18px 18px;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .bootTitle {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin-bottom: 6px;
+    }
+    .bootSub {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+    .bootHint {
+      font-size: 12px;
+      opacity: 0.8;
+      line-height: 1.35;
+    }
+    .bootHint code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95em;
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+  </style>
+
+  <script>
+    // Once the app boots, it will append its UI into <body>.
+    // We can safely remove the splash after a short delay if the appRoot appears.
+    (function () {
+      function tryRemoveSplash() {
+        const splash = document.getElementById("bootSplash");
+        if (!splash) return;
+
+        // game.js creates .appRoot on boot(); remove splash once we see it.
+        if (document.querySelector(".appRoot")) {
+          splash.remove();
+          return;
+        }
+
+        // keep trying briefly (covers slow iOS / file:// loads)
+        setTimeout(tryRemoveSplash, 250);
+      }
+      window.addEventListener("DOMContentLoaded", () => setTimeout(tryRemoveSplash, 200));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "npc_scavenger",
+    "name": "Zig",
+    "archetype": "Lone Scavenger",
+    "perk": { "id": "perk_scrounger", "name": "Scrounger", "desc": "+10% salvage yield." },
+    "quirk": { "id": "quirk_picky", "name": "Picky Eater", "desc": "Hates low-tier rations." },
+    "stats": { "Wilderness": 2, "Scavenge": 5, "Mechanics": 2, "Cooking": 1, "Medical": 1, "Grit": 4 }
+  },
+  {
+    "id": "npc_medic",
+    "name": "Dot",
+    "archetype": "Road Medic",
+    "perk": { "id": "perk_fieldmed", "name": "Field Medic", "desc": "Reduces injury downtime." },
+    "quirk": { "id": "quirk_germaphobe", "name": "Germaphobe", "desc": "Hates dirty water (morale hit)." },
+    "stats": { "Wilderness": 2, "Scavenge": 2, "Mechanics": 1, "Cooking": 2, "Medical": 6, "Grit": 3 }
+  },
+{
+    "id": "npc_mechanic",
+    "name": "Reggie",
+    "archetype": "Car Guy",
+    "perk": { "id": "perk_mechanic", "name": "Car Guy", "desc": "Improves Caravan Health." },
+    "quirk": { "id": "quirk_mumbles", "name": "Mumbles", "desc": "Can't quite here him... (morale hit)." },
+    "stats": { "Wilderness": 2, "Scavenge": 4, "Mechanics": 5, "Cooking": 1, "Medical": 1, "Grit": 4 }
+  },
+{
+    "id": "npc_musician",
+    "name": "Sundance",
+    "archetype": "Musician",
+    "perk": { "id": "perk_musician", "name": "Sundance", "desc": "Boosts Morale for entire crew." },
+    "quirk": { "id": "quirk_passiveaggressive", "name": "Passive aggressive", "desc": "Get's lonely. (morale hit)." },
+    "stats": { "Wilderness": 5, "Scavenge": 1, "Mechanics": 1, "Cooking": 5, "Medical": 2, "Grit": 1 }
+  }
+]
+

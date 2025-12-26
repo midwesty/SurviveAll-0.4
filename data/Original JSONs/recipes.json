@@ -1,0 +1,118 @@
+[
+  {
+    "id": "cordage",
+    "name": "Cordage",
+    "category": "materials",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 60,
+    "inputs": [{ "id": "fiber", "qty": 3 }],
+    "outputs": [{ "id": "fiber", "qty": 0 }],
+    "special": {
+      "makeItem": {
+        "id": "cordage_item",
+        "name": "Cordage",
+        "category": "material",
+        "stackSize": 30,
+        "sources": []
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "spear_fishing",
+    "name": "Fishing Spear",
+    "category": "tools",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 180,
+    "inputs": [
+      { "id": "stick", "qty": 3 },
+      { "id": "stone", "qty": 2 },
+      { "id": "fiber", "qty": 2 }
+    ],
+    "outputs": [{ "id": "spear_fishing", "qty": 1 }]
+  },
+  {
+    "id": "trap_simple",
+    "name": "Simple Trap",
+    "category": "tools",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 150,
+    "inputs": [
+      { "id": "stick", "qty": 2 },
+      { "id": "fiber", "qty": 3 }
+    ],
+    "outputs": [{ "id": "trap_simple", "qty": 1 }]
+  },
+  {
+    "id": "hatchet_stone",
+    "name": "Stone Hatchet",
+    "category": "tools",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 210,
+    "inputs": [
+      { "id": "stick", "qty": 2 },
+      { "id": "stone", "qty": 3 },
+      { "id": "fiber", "qty": 2 }
+    ],
+    "outputs": [{ "id": "hatchet_stone", "qty": 1 }]
+  },
+  {
+    "id": "bandage",
+    "name": "Bandage",
+    "category": "medical",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 120,
+    "inputs": [{ "id": "fiber", "qty": 4 }],
+    "outputs": [{ "id": "bandage", "qty": 1 }]
+  },
+
+  {
+    "id": "cook_meat",
+    "name": "Cook Meat",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 180,
+    "inputs": [{ "id": "meat_raw", "qty": 1 }],
+    "outputs": [{ "id": "ration_basic", "qty": 1 }]
+  },
+  {
+    "id": "cook_fish",
+    "name": "Cook Fish",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 150,
+    "inputs": [{ "id": "fish_raw", "qty": 1 }],
+    "outputs": [{ "id": "ration_basic", "qty": 1 }]
+  },
+  {
+    "id": "boil_water",
+    "name": "Boil Dirty Water",
+    "category": "water",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 120,
+    "inputs": [{ "id": "water_dirty", "qty": 1 }],
+    "outputs": [{ "id": "water_clean", "qty": 1 }]
+  },
+  {
+    "id": "meal_hearty",
+    "name": "Hearty Meal",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 1,
+    "timeSec": 600,
+    "inputs": [
+      { "id": "ration_basic", "qty": 2 },
+      { "id": "fiber", "qty": 1 }
+    ],
+    "outputs": [{ "id": "meal_hearty", "qty": 1 }]
+  }
+]
+

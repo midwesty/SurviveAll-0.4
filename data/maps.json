@@ -1,0 +1,15 @@
+{
+  "view": {
+    "size": 5,
+    "minSize": 5,
+    "maxSize": 15
+  },
+  "travel": {
+    "baseMinutesPerTile": 60
+  },
+  "defaults": {
+    "danger": 1,
+    "travelTimeMod": 1.0
+  },
+  "biomes": {}
+}

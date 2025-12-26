@@ -1,0 +1,8 @@
+[
+  { "id": "wild_forest", "name": "Wild Forest Edge", "weight": 22, "tags": ["wild"], "bg": "bg_forest" },
+  { "id": "riverbed", "name": "Riverbed Flats", "weight": 12, "tags": ["wet"], "bg": "bg_river" },
+  { "id": "overgrown_suburb", "name": "Overgrown Suburb", "weight": 20, "tags": ["ruins", "wild"], "bg": "bg_suburb" },
+  { "id": "collapsed_downtown", "name": "Collapsed Downtown", "weight": 14, "tags": ["ruins", "danger"], "bg": "bg_downtown" },
+  { "id": "industrial_scrap", "name": "Industrial Scrapfields", "weight": 16, "tags": ["ruins", "industrial"], "bg": "bg_industrial" },
+  { "id": "desert_highway", "name": "Desert Highway Cut", "weight": 16, "tags": ["dry"], "bg": "bg_desert" }
+]

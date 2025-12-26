@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "worldSeed": "WORLD_V01",
+  "tilePrecision": 7,
+  "maxLogEntries": 600,
+  "safetySnapshotEnabled": true,
+  "drains": {
+    "hungerPerMin": 0.25,
+    "thirstPerMin": 0.35,
+    "moraleRecoverPerMinRest": 0.1
+  },
+  "jobStrenuousDrainMultiplier": 2.0,
+  "autoConsumeThreshold": 50,
+  "autoConsumeAmountTarget": 70,
+  "idleMaxCyclesPerSim": 20,
+  "adminPassphrase": "ROVER",
+  "dayNight": {
+    "dayStartHour": 6,
+    "nightStartHour": 18
+  }
+}

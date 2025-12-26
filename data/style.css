@@ -1,0 +1,997 @@
+/* ============================================================================
+  RV ROVER (v0.1) — style.css
+  Dashboard layout + panels + modals + admin overlay
+  Designed to match the classnames created by your current game.js UI builder.
+
+  Notes:
+  - game.js sets: UI.windshield.dataset.bg = "bg_forest" etc.
+    This CSS styles the windshield based on [data-bg="..."].
+  - Keep everything readable and clickable on mobile (iOS) + desktop.
+============================================================================ */
+
+/* =========================
+   RESET / BASE
+========================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0f0f12;
+  color: #e9e9f0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  overflow-x: hidden;
+}
+
+/* Slightly nicer text selection */
+::selection { background: rgba(255,255,255,0.18); }
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --bg: #0f0f12;
+  --panel: rgba(255,255,255,0.05);
+  --panel2: rgba(255,255,255,0.07);
+  --stroke: rgba(255,255,255,0.14);
+  --stroke2: rgba(255,255,255,0.10);
+
+  --text: #e9e9f0;
+  --muted: rgba(233,233,240,0.72);
+  --faint: rgba(233,233,240,0.55);
+
+  --good: #72ffb1;
+  --bad: #ff6b6b;
+  --warn: #ffd166;
+
+  --shadow: 0 16px 40px rgba(0,0,0,0.45);
+  --shadow2: 0 10px 26px rgba(0,0,0,0.35);
+
+  --radius: 16px;
+  --radius2: 22px;
+
+  --gap: 12px;
+  --gap2: 16px;
+
+  --btn: rgba(255,255,255,0.10);
+  --btnHover: rgba(255,255,255,0.16);
+  --btnGhost: rgba(255,255,255,0.06);
+  --btnGhostHover: rgba(255,255,255,0.10);
+
+  --focus: rgba(114,255,177,0.50);
+}
+
+/* =========================
+   LAYOUT ROOT
+========================= */
+.appRoot {
+  min-height: 100vh;
+  padding: 14px;
+  padding-bottom: 26px;
+  display: grid;
+  gap: var(--gap2);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Desktop: windshield on top, hud+log + side panel in two columns */
+@media (min-width: 980px) {
+  .appRoot {
+    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-rows: auto auto auto;
+    align-items: start;
+  }
+  .windshield { grid-column: 1 / -1; grid-row: 1 / 2; }
+  .npcStrip { grid-column: 1 / -1; grid-row: 2 / 3; }
+  .hud { grid-column: 1 / 2; grid-row: 3 / 4; }
+  .panel { grid-column: 2 / 3; grid-row: 3 / 4; position: sticky; top: 14px; }
+}
+
+/* =========================
+   WINDSHIELD (TILE VIEW)
+========================= */
+.windshield {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  /* CHANGED: background is now image-driven (with fallback) */
+  background-color: rgba(0,0,0,0.25);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* A subtle overlay (keeps text readable no matter what image you use) */
+.windshield::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* CHANGED: keep your nice texture + add a stronger readability gradient */
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0.60)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.045) 0,
+      rgba(255,255,255,0.045) 2px,
+      rgba(255,255,255,0.00) 2px,
+      rgba(255,255,255,0.00) 10px
+    );
+
+  opacity: 0.60;
+  pointer-events: none;
+}
+
+/* Title card inside windshield */
+.tileCard {
+  position: relative;
+  z-index: 1;
+  padding: 12px 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid var(--stroke2);
+  background: rgba(0,0,0,0.22);
+}
+
+/* RV view area */
+.rvView {
+  position: relative;
+  z-index: 1;
+  padding: 16px 14px 18px;
+  min-height: 88px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.rvPlaceholder {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12.5px;
+  color: rgba(233,233,240,0.86);
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  background: rgba(0,0,0,0.25);
+  box-shadow: var(--shadow2);
+}
+
+/* Background “themes” set by JS via dataset
+   Put images in: /images/bg/
+   Names:
+   - unknown.jpg
+   - forest.jpg
+   - river.jpg
+   - suburb.jpg
+   - downtown.jpg
+   - industrial.jpg
+   - desert.jpg
+*/
+.windshield[data-bg="bg_unknown"] {
+  background-image: url("./images/bg/unknown.jpg");
+}
+
+.windshield[data-bg="bg_forest"] {
+  background-image: url("./images/bg/forest.jpg");
+}
+
+.windshield[data-bg="bg_river"] {
+  background-image: url("./images/bg/river.jpg");
+}
+
+.windshield[data-bg="bg_suburb"] {
+  background-image: url("./images/bg/suburb.jpg");
+}
+
+.windshield[data-bg="bg_downtown"] {
+  background-image: url("./images/bg/downtown.jpg");
+}
+
+.windshield[data-bg="bg_industrial"] {
+  background-image: url("./images/bg/industrial.jpg");
+}
+
+.windshield[data-bg="bg_desert"] {
+  background-image: url("./images/bg/desert.jpg");
+}
+
+/* =========================
+   HUD
+========================= */
+.hud {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius2);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow2);
+  overflow: hidden;
+}
+
+/* Gauges row */
+.gauges {
+  padding: 12px 12px 8px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (min-width: 560px) {
+  .gauges {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 980px) {
+  .gauges {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+.gauge {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 10px 10px;
+  background: rgba(0,0,0,0.18);
+}
+
+.gLabel {
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.gValue {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Buttons row */
+.hudButtons {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.16);
+}
+
+/* =========================
+   BUTTONS + INPUTS
+========================= */
+.btn {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: var(--btn);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.14s ease, border-color 0.14s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  background: var(--btnHover);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.ghost {
+  background: var(--btnGhost);
+}
+
+.btn.ghost:hover {
+  background: var(--btnGhostHover);
+}
+
+.btn.small {
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 12.5px;
+}
+
+/* Disabled state used by JS by adding "disabled" class */
+.btn.disabled,
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Inputs */
+.input,
+.select {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.22);
+  color: var(--text);
+  padding: 10px 10px;
+  border-radius: 14px;
+  outline: none;
+  font-size: 14px;
+}
+
+.select { cursor: pointer; }
+
+.input:focus,
+.select:focus {
+  border-color: rgba(114,255,177,0.55);
+  box-shadow: 0 0 0 3px rgba(114,255,177,0.18);
+}
+
+/* Simple row helper */
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex: 1 1 auto;
+  min-width: 140px;
+}
+
+.row .btn,
+.row .select,
+.row .input {
+  flex: 1 1 160px;
+}
+
+.smallLabel {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.1px;
+}
+
+/* =========================
+   LOG BOX
+========================= */
+.logBox {
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding: 10px 12px 12px;
+}
+
+.logTitle {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-bottom: 8px;
+}
+
+.logList {
+  max-height: 210px;
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  background: rgba(0,0,0,0.18);
+}
+
+.logRow {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 10px;
+  padding: 6px 6px;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+  font-size: 12.5px;
+}
+.logRow:last-child { border-bottom: none; }
+
+.logTime { color: rgba(233,233,240,0.58); }
+.logText { color: rgba(233,233,240,0.90); }
+
+.logRow.good .logText { color: rgba(114,255,177,0.92); }
+.logRow.bad .logText  { color: rgba(255,107,107,0.95); }
+.logRow.system .logText { color: rgba(255,209,102,0.92); }
+
+/* =========================
+   SIDE PANEL
+========================= */
+.panel {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius2);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow2);
+  overflow: hidden;
+}
+
+.panel.hidden {
+  display: none;
+}
+
+.panelTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.16);
+}
+
+.panelTitle {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.panelBody {
+  padding: 12px;
+}
+
+/* Stack helpers */
+.panelStack {
+  display: grid;
+  gap: 12px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 4px 0;
+}
+
+/* Cards in panels */
+.card {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.18);
+  padding: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.cardTitle {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+
+.cardBody {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+/* Locked / active cards */
+.card.locked {
+  opacity: 0.85;
+  border-style: dashed;
+}
+
+.card.active {
+  border-color: rgba(114,255,177,0.45);
+  box-shadow: 0 0 0 3px rgba(114,255,177,0.12), 0 10px 22px rgba(0,0,0,0.32);
+}
+
+/* Hints + status */
+.hint {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.hint.good { color: rgba(114,255,177,0.92); }
+.hint.bad  { color: rgba(255,107,107,0.95); }
+
+/* =========================
+   MODALS
+========================= */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.68);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  z-index: 6500;
+}
+
+.modal {
+  width: min(560px, 100%);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 22px;
+  background: rgba(20,20,26,0.92);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.modalTitle {
+  padding: 14px 14px 10px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.modalBody {
+  padding: 12px 14px;
+  color: rgba(233,233,240,0.88);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.modalRow {
+  padding: 12px 14px 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+/* =========================
+   TOASTS
+========================= */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(20,20,26,0.92);
+  box-shadow: var(--shadow2);
+  color: rgba(233,233,240,0.95);
+  z-index: 3000;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  max-width: calc(100vw - 28px);
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================
+   GLOBAL BANNER
+========================= */
+.banner {
+  position: fixed;
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%) translateY(-10px);
+  opacity: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(20,20,26,0.92);
+  box-shadow: var(--shadow2);
+  color: rgba(233,233,240,0.95);
+  z-index: 2500;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  max-width: calc(100vw - 28px);
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+}
+
+.banner.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================
+   ADMIN OVERLAY
+========================= */
+.adminOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  z-index: 2600;
+}
+
+.adminPanel {
+  width: min(720px, 100%);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 22px;
+  background: rgba(12,12,14,0.98);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.adminTitle {
+  font-weight: 950;
+  letter-spacing: 0.2px;
+  padding: 4px 4px 2px;
+}
+
+/* Inside admin panel, keep row items tighter */
+.adminPanel .row > * { min-width: 140px; }
+.adminPanel .divider { margin: 6px 0; }
+
+/* =========================
+   SCROLLBARS (nice-to-have)
+========================= */
+.logList::-webkit-scrollbar,
+.panelBody::-webkit-scrollbar {
+  width: 10px;
+}
+.logList::-webkit-scrollbar-thumb,
+.panelBody::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.16);
+  border-radius: 12px;
+  border: 2px solid rgba(0,0,0,0.25);
+}
+.logList::-webkit-scrollbar-track,
+.panelBody::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.20);
+  border-radius: 12px;
+}
+
+/* =========================
+   MOBILE TWEAKS
+========================= */
+@media (max-width: 480px) {
+  .appRoot { padding: 12px; }
+  .gValue { font-size: 15px; }
+  .btn { padding: 10px 12px; }
+  .logRow { grid-template-columns: 74px 1fr; }
+}
+
+
+/* =========================
+   NPC PORTRAIT STRIP
+========================= */
+.npcStrip {
+  width: 100%;
+}
+
+.npcGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (max-width: 620px) {
+  .npcGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.npcCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  aspect-ratio: 2 / 3;
+}
+
+.npcImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.npcPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.88);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+}
+
+.npcBadges {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.npcBadge {
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(6px);
+}
+
+.npcBars {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  display: grid;
+  gap: 4px;
+  z-index: 2;
+}
+
+.npcBar {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+
+.npcBarFill {
+  height: 100%;
+  width: 0%;
+  background: rgba(255,255,255,0.78);
+}
+
+
+/* =========================
+   Settlement Overlay
+========================= */
+.settlementOverlay {
+  position: fixed;
+  inset: 0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.78);
+  z-index: 5000;
+}
+
+.settlementPanel {
+  width: min(980px, 96vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(12,12,14,0.98);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 60px rgba(0,0,0,.45);
+}
+
+.settlementHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.settlementTitleMain {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.settlementTitleSub {
+  font-size: 12px;
+  opacity: .75;
+  margin-top: 2px;
+}
+
+.settlementTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.settlementTabs .btn.active {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.settlementBody {
+  padding: 14px;
+  overflow: auto;
+}
+
+/* =========================
+   MAP OVERLAY (v0.4)
+========================= */
+.mapOverlay {
+  position: fixed;
+  inset: 0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.78);
+  z-index: 4800; /* below confirm/input modals (modalOverlay=6500), above main UI */
+}
+
+.mapPanel {
+  width: min(980px, 96vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(12,12,14,0.98);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.mapHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.16);
+}
+
+.mapTitle {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.mapBody {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 12px;
+  overflow: auto;
+}
+
+@media (min-width: 820px) {
+  .mapBody {
+    grid-template-columns: 1fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.mapGridWrap {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.18);
+  padding: 12px;
+  overflow: auto;
+}
+
+.mapGrid {
+  display: grid;
+  gap: 8px;
+  justify-content: start;
+}
+
+.mapCell {
+  width: 72px;
+  height: 58px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.06s ease, background 0.14s ease, border-color 0.14s ease;
+  padding: 6px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.mapCell:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.mapCell:active {
+  transform: translateY(1px);
+}
+
+.mapCell .mcTop {
+  font-size: 11px;
+  font-weight: 800;
+  opacity: 0.92;
+}
+
+.mapCell .mcSub {
+  margin-top: 3px;
+  font-size: 10px;
+  opacity: 0.72;
+}
+
+.mapCell.unknown {
+  opacity: 0.70;
+}
+
+.mapCell.discovered {
+  background: rgba(114,255,177,0.06);
+  border-color: rgba(114,255,177,0.24);
+}
+
+.mapCell.current {
+  outline: 2px solid rgba(114,255,177,0.55);
+  outline-offset: 2px;
+}
+
+.mapCell.hasSettlement {
+  box-shadow: 0 0 0 2px rgba(255,209,102,0.22) inset;
+}
+
+.mapInfo {
+  display: grid;
+  gap: 12px;
+}
+
+.mapInfo .card {
+  margin: 0;
+}
+
+.mapShipList {
+  display: grid;
+  gap: 8px;
+}
+
+.shipRow {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  background: rgba(0,0,0,0.18);
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.shipRowTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.shipRowSub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.25;
+}
+
+/* ===== FIX: native <select> dropdown options invisible (Windows/Chrome) ===== */
+/* Dark UI styles can cause option text to appear invisible on the OS white dropdown list. */
+.modal select,
+.modal .select,
+select.select,
+.select {
+  color: #eaeaea;
+}
+
+/* Force option list colors so item names remain readable when the dropdown opens */
+.modal select option,
+select.select option,
+.select option {
+  background: #111;
+  color: #f2f2f2;
+}
+
+/* Some browsers also style optgroup separately */
+.modal select optgroup,
+select.select optgroup,
+.select optgroup {
+  background: #111;
+  color: #f2f2f2;
+}
+

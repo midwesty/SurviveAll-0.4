@@ -1,0 +1,59 @@
+[
+  {
+    "id": "storage",
+    "name": "Storage",
+    "desc": "Shared RV storage holds your supplies.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "storageCap", "value": 60 }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 10 }, { "id": "wiring", "qty": 3 }], "effects": [{ "type": "storageCap", "value": 90 }] },
+      { "level": 2, "cost": [{ "id": "scrap_metal", "qty": 25 }, { "id": "wiring", "qty": 10 }], "effects": [{ "type": "storageCap", "value": 130 }] }
+    ]
+  },
+  {
+    "id": "bunks",
+    "name": "Bunks",
+    "desc": "More bunks let you recruit more crew.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "crewCap", "value": 2 }] },
+      { "level": 1, "cost": [{ "id": "fiber", "qty": 12 }, { "id": "scrap_metal", "qty": 8 }], "effects": [{ "type": "crewCap", "value": 3 }] },
+      { "level": 2, "cost": [{ "id": "fiber", "qty": 25 }, { "id": "scrap_metal", "qty": 18 }, { "id": "wiring", "qty": 5 }], "effects": [{ "type": "crewCap", "value": 4 }] }
+    ]
+  },
+  {
+    "id": "workbench",
+    "name": "Workbench",
+    "desc": "Craft tools, repair gear, process basics.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "workbench", "value": 0 }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 12 }], "effects": [{ "type": "stationLevel", "station": "workbench", "value": 1 }] },
+      { "level": 2, "cost": [{ "id": "scrap_metal", "qty": 28 }, { "id": "wiring", "qty": 8 }], "effects": [{ "type": "stationLevel", "station": "workbench", "value": 2 }] }
+    ]
+  },
+  {
+    "id": "stove",
+    "name": "Camp Stove",
+    "desc": "Cook food and boil water.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "stove", "value": 0 }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 10 }], "effects": [{ "type": "stationLevel", "station": "stove", "value": 1 }] }
+    ]
+  },
+  {
+    "id": "purifier",
+    "name": "Water Purifier",
+    "desc": "Purify dirty water more efficiently.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "purifierEnabled", "value": false }] },
+      { "level": 1, "cost": [{ "id": "wiring", "qty": 6 }, { "id": "scrap_metal", "qty": 12 }], "effects": [{ "type": "purifierEnabled", "value": true }] }
+    ]
+  },
+  {
+    "id": "recycler",
+    "name": "Recycler",
+    "desc": "Break down salvage into parts.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "recyclerEnabled", "value": false }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 18 }, { "id": "wiring", "qty": 7 }], "effects": [{ "type": "recyclerEnabled", "value": true }] }
+    ]
+  }
+]

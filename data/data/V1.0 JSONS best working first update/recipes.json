@@ -1,0 +1,754 @@
+[
+  {
+    "id": "cordage",
+    "name": "Cordage",
+    "category": "materials",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 60,
+    "inputs": [
+      {
+        "id": "fiber",
+        "qty": 3
+      }
+    ],
+    "outputs": [
+      {
+        "id": "fiber",
+        "qty": 0
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "cordage_item",
+        "name": "Cordage",
+        "category": "material",
+        "stackSize": 30,
+        "sources": []
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "spear_fishing",
+    "name": "Fishing Spear",
+    "category": "tools",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 180,
+    "inputs": [
+      {
+        "id": "stick",
+        "qty": 3
+      },
+      {
+        "id": "stone",
+        "qty": 2
+      },
+      {
+        "id": "fiber",
+        "qty": 2
+      }
+    ],
+    "outputs": [
+      {
+        "id": "spear_fishing",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "trap_simple",
+    "name": "Simple Trap",
+    "category": "tools",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 150,
+    "inputs": [
+      {
+        "id": "stick",
+        "qty": 2
+      },
+      {
+        "id": "fiber",
+        "qty": 3
+      }
+    ],
+    "outputs": [
+      {
+        "id": "trap_simple",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "hatchet_stone",
+    "name": "Stone Hatchet",
+    "category": "tools",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 210,
+    "inputs": [
+      {
+        "id": "stick",
+        "qty": 2
+      },
+      {
+        "id": "stone",
+        "qty": 3
+      },
+      {
+        "id": "fiber",
+        "qty": 2
+      }
+    ],
+    "outputs": [
+      {
+        "id": "hatchet_stone",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "bandage",
+    "name": "Bandage",
+    "category": "medical",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 120,
+    "inputs": [
+      {
+        "id": "fiber",
+        "qty": 4
+      }
+    ],
+    "outputs": [
+      {
+        "id": "bandage",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "cook_meat",
+    "name": "Cook Meat",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 180,
+    "inputs": [
+      {
+        "id": "meat_raw",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "ration_basic",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "cook_fish",
+    "name": "Cook Fish",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 150,
+    "inputs": [
+      {
+        "id": "fish_raw",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "ration_basic",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "boil_water",
+    "name": "Boil Dirty Water",
+    "category": "water",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 120,
+    "inputs": [
+      {
+        "id": "water_dirty",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "water_clean",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "meal_hearty",
+    "name": "Hearty Meal",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 1,
+    "timeSec": 600,
+    "inputs": [
+      {
+        "id": "ration_basic",
+        "qty": 2
+      },
+      {
+        "id": "fiber",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "meal_hearty",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "id": "jerky_meat",
+    "name": "Dry Meat Jerky",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 420,
+    "inputs": [
+      {
+        "id": "meat_raw",
+        "qty": 1
+      },
+      {
+        "id": "fiber",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "jerky_meat",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "jerky_meat",
+        "name": "Meat Jerky",
+        "category": "food",
+        "stackSize": 10,
+        "food": {
+          "hunger": 14,
+          "morale": 2,
+          "quality": "med"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "jerky_fish",
+    "name": "Dry Fish Jerky",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 420,
+    "inputs": [
+      {
+        "id": "fish_raw",
+        "qty": 1
+      },
+      {
+        "id": "fiber",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "jerky_fish",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "jerky_fish",
+        "name": "Fish Jerky",
+        "category": "food",
+        "stackSize": 10,
+        "food": {
+          "hunger": 12,
+          "morale": 1,
+          "quality": "med"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "stew_fish",
+    "name": "Fish Stew",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 1,
+    "timeSec": 540,
+    "inputs": [
+      {
+        "id": "fish_raw",
+        "qty": 2
+      },
+      {
+        "id": "water_clean",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "stew_fish",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "stew_fish",
+        "name": "Fish Stew",
+        "category": "food",
+        "stackSize": 8,
+        "food": {
+          "hunger": 22,
+          "morale": 7,
+          "quality": "high"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "stew_meat",
+    "name": "Meat Stew",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 1,
+    "timeSec": 600,
+    "inputs": [
+      {
+        "id": "meat_raw",
+        "qty": 2
+      },
+      {
+        "id": "water_clean",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "stew_meat",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "stew_meat",
+        "name": "Meat Stew",
+        "category": "food",
+        "stackSize": 8,
+        "food": {
+          "hunger": 24,
+          "morale": 7,
+          "quality": "high"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "trail_mix",
+    "name": "Trail Mix Pack",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 240,
+    "inputs": [
+      {
+        "id": "ration_basic",
+        "qty": 1
+      },
+      {
+        "id": "fiber",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "trail_mix",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "trail_mix",
+        "name": "Trail Mix Pack",
+        "category": "food",
+        "stackSize": 15,
+        "food": {
+          "hunger": 12,
+          "morale": 3,
+          "quality": "med"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "comfort_meal",
+    "name": "Comfort Meal",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 1,
+    "timeSec": 720,
+    "inputs": [
+      {
+        "id": "ration_basic",
+        "qty": 1
+      },
+      {
+        "id": "meat_raw",
+        "qty": 1
+      },
+      {
+        "id": "water_clean",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "comfort_meal",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "comfort_meal",
+        "name": "Comfort Meal",
+        "category": "food",
+        "stackSize": 6,
+        "food": {
+          "hunger": 30,
+          "morale": 12,
+          "quality": "high"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "grilled_fish",
+    "name": "Grilled Fish Skewer",
+    "category": "food",
+    "station": "stove",
+    "stationLevel": 0,
+    "timeSec": 360,
+    "inputs": [
+      {
+        "id": "fish_raw",
+        "qty": 1
+      },
+      {
+        "id": "stick",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "grilled_fish",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "grilled_fish",
+        "name": "Grilled Fish Skewer",
+        "category": "food",
+        "stackSize": 10,
+        "food": {
+          "hunger": 18,
+          "morale": 4,
+          "quality": "med"
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "filter_water_bulk",
+    "name": "Filter Water (Bulk)",
+    "category": "water",
+    "station": "purifier",
+    "stationLevel": 1,
+    "timeSec": 120,
+    "inputs": [
+      {
+        "id": "water_dirty",
+        "qty": 3
+      }
+    ],
+    "outputs": [
+      {
+        "id": "water_clean",
+        "qty": 3
+      }
+    ],
+    "special": null
+  },
+  {
+    "id": "mineral_water",
+    "name": "Mineral Water",
+    "category": "water",
+    "station": "purifier",
+    "stationLevel": 1,
+    "timeSec": 180,
+    "inputs": [
+      {
+        "id": "water_clean",
+        "qty": 1
+      },
+      {
+        "id": "stone",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "mineral_water",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "mineral_water",
+        "name": "Mineral Water",
+        "category": "water",
+        "stackSize": 20,
+        "water": {
+          "thirst": 20,
+          "morale": 1
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "rope_strong",
+    "name": "Strong Rope",
+    "category": "material",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 300,
+    "inputs": [
+      {
+        "id": "fiber",
+        "qty": 3
+      }
+    ],
+    "outputs": [
+      {
+        "id": "rope_strong",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "rope_strong",
+        "name": "Strong Rope",
+        "category": "material",
+        "stackSize": 20,
+        "sources": []
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "spear_hunting",
+    "name": "Hunting Spear",
+    "category": "tool",
+    "station": "workbench",
+    "stationLevel": 1,
+    "timeSec": 600,
+    "inputs": [
+      {
+        "id": "stick",
+        "qty": 2
+      },
+      {
+        "id": "stone",
+        "qty": 2
+      },
+      {
+        "id": "fiber",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "spear_hunting",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "spear_hunting",
+        "name": "Hunting Spear",
+        "category": "tool",
+        "stackSize": 1,
+        "equipSlot": "mainHand",
+        "tool": {
+          "tag": "cutting",
+          "tier": 2,
+          "durabilityMax": 85,
+          "power": 3
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "vest_padded",
+    "name": "Padded Vest",
+    "category": "armor",
+    "station": "workbench",
+    "stationLevel": 1,
+    "timeSec": 720,
+    "inputs": [
+      {
+        "id": "fiber",
+        "qty": 6
+      },
+      {
+        "id": "scrap_metal",
+        "qty": 4
+      }
+    ],
+    "outputs": [
+      {
+        "id": "vest_padded",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "vest_padded",
+        "name": "Padded Vest",
+        "category": "armor",
+        "stackSize": 1,
+        "equipSlot": "body",
+        "armor": {
+          "tier": 2,
+          "durabilityMax": 120,
+          "protection": 0.12
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "splint",
+    "name": "Splint",
+    "category": "medical",
+    "station": "workbench",
+    "stationLevel": 0,
+    "timeSec": 240,
+    "inputs": [
+      {
+        "id": "stick",
+        "qty": 1
+      },
+      {
+        "id": "bandage",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "splint",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "splint",
+        "name": "Splint",
+        "category": "medical",
+        "stackSize": 8,
+        "med": {
+          "minorInjuryReduceMins": 160
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "knife_scrap",
+    "name": "Scrap Knife",
+    "category": "tool",
+    "station": "workbench",
+    "stationLevel": 1,
+    "timeSec": 480,
+    "inputs": [
+      {
+        "id": "scrap_metal",
+        "qty": 2
+      },
+      {
+        "id": "fiber",
+        "qty": 1
+      }
+    ],
+    "outputs": [
+      {
+        "id": "knife_scrap",
+        "qty": 1
+      }
+    ],
+    "special": {
+      "makeItem": {
+        "id": "knife_scrap",
+        "name": "Scrap Knife",
+        "category": "tool",
+        "stackSize": 1,
+        "equipSlot": "mainHand",
+        "tool": {
+          "tag": "cutting",
+          "tier": 2,
+          "durabilityMax": 70,
+          "power": 3
+        }
+      },
+      "qty": 1
+    }
+  },
+  {
+    "id": "strip_wiring",
+    "name": "Strip Wiring",
+    "category": "material",
+    "station": "recycler",
+    "stationLevel": 1,
+    "timeSec": 300,
+    "inputs": [
+      {
+        "id": "scrap_metal",
+        "qty": 4
+      }
+    ],
+    "outputs": [
+      {
+        "id": "wiring",
+        "qty": 1
+      }
+    ],
+    "special": null
+  }
+]

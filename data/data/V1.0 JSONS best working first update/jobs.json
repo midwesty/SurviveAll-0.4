@@ -1,0 +1,289 @@
+[
+  {
+    "id": "forage",
+    "name": "Forage",
+    "alwaysAvailable": true,
+    "baseSec": 600,
+    "strenuous": false,
+    "toolTag": "cutting",
+    "yields": [
+      {
+        "id": "stick",
+        "min": 2,
+        "max": 6
+      },
+      {
+        "id": "stone",
+        "min": 1,
+        "max": 4
+      },
+      {
+        "id": "fiber",
+        "min": 0,
+        "max": 4
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.03,
+      "majorInjury": 0.005,
+      "toolWear": 0.12,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "fish",
+    "name": "Fish",
+    "alwaysAvailable": true,
+    "baseSec": 900,
+    "strenuous": false,
+    "toolTag": "fishing",
+    "yields": [
+      {
+        "id": "fish_raw",
+        "min": 1,
+        "max": 3
+      },
+      {
+        "id": "water_dirty",
+        "min": 0,
+        "max": 1
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.02,
+      "majorInjury": 0.004,
+      "toolWear": 0.1,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "hunt",
+    "name": "Hunt",
+    "alwaysAvailable": true,
+    "baseSec": 1200,
+    "strenuous": true,
+    "toolTag": "cutting",
+    "yields": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 3
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.06,
+      "majorInjury": 0.01,
+      "toolWear": 0.15,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "trap",
+    "name": "Set Traps",
+    "alwaysAvailable": true,
+    "baseSec": 1800,
+    "strenuous": false,
+    "toolTag": "trap",
+    "yields": [
+      {
+        "id": "meat_raw",
+        "min": 0,
+        "max": 3
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.04,
+      "majorInjury": 0.007,
+      "toolWear": 0.1,
+      "sickness": 0.0
+    },
+    "requiresItem": "trap_simple",
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "scavenge",
+    "name": "Scavenge Ruins",
+    "alwaysAvailable": false,
+    "biomeTags": [
+      "ruins"
+    ],
+    "baseSec": 1500,
+    "strenuous": true,
+    "toolTag": "chopping",
+    "yields": [
+      {
+        "id": "scrap_metal",
+        "min": 2,
+        "max": 7
+      },
+      {
+        "id": "wiring",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.09,
+      "majorInjury": 0.02,
+      "toolWear": 0.2,
+      "sickness": 0.03
+    },
+    "xpSkill": "Scavenge"
+  },
+  {
+    "id": "gather_water",
+    "name": "Gather Water",
+    "alwaysAvailable": true,
+    "baseSec": 60,
+    "strenuous": false,
+    "toolTag": null,
+    "yields": [],
+    "risk": {
+      "minorInjury": 0.0,
+      "majorInjury": 0.0,
+      "toolWear": 0.0,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "explore",
+    "name": "Explore Nearby Tile",
+    "alwaysAvailable": true,
+    "baseSec": 1500,
+    "strenuous": true,
+    "toolTag": null,
+    "yields": [],
+    "risk": {
+      "minorInjury": 0.02,
+      "majorInjury": 0.01,
+      "toolWear": 0.0,
+      "sickness": 0.02
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "gather_sticks",
+    "name": "Gather Sticks",
+    "alwaysAvailable": true,
+    "baseSec": 300,
+    "strenuous": false,
+    "toolTag": "cutting",
+    "yields": [
+      {
+        "id": "stick",
+        "min": 2,
+        "max": 6
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.02,
+      "majorInjury": 0.003,
+      "toolWear": 0.08,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "gather_stones",
+    "name": "Gather Stones",
+    "alwaysAvailable": true,
+    "baseSec": 300,
+    "strenuous": false,
+    "toolTag": null,
+    "yields": [
+      {
+        "id": "stone",
+        "min": 2,
+        "max": 6
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.015,
+      "majorInjury": 0.002,
+      "toolWear": 0.0,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "harvest_fiber",
+    "name": "Harvest Fiber",
+    "alwaysAvailable": true,
+    "baseSec": 360,
+    "strenuous": false,
+    "toolTag": "cutting",
+    "yields": [
+      {
+        "id": "fiber",
+        "min": 2,
+        "max": 7
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.015,
+      "majorInjury": 0.002,
+      "toolWear": 0.06,
+      "sickness": 0.0
+    },
+    "xpSkill": "Wilderness"
+  },
+  {
+    "id": "salvage_scrap",
+    "name": "Salvage Scrap",
+    "alwaysAvailable": false,
+    "biomeTags": [
+      "ruins"
+    ],
+    "baseSec": 900,
+    "strenuous": true,
+    "toolTag": "chopping",
+    "yields": [
+      {
+        "id": "scrap_metal",
+        "min": 3,
+        "max": 9
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.07,
+      "majorInjury": 0.015,
+      "toolWear": 0.18,
+      "sickness": 0.02
+    },
+    "xpSkill": "Scavenge"
+  },
+  {
+    "id": "salvage_wiring",
+    "name": "Salvage Wiring",
+    "alwaysAvailable": false,
+    "biomeTags": [
+      "ruins"
+    ],
+    "baseSec": 1050,
+    "strenuous": true,
+    "toolTag": "chopping",
+    "yields": [
+      {
+        "id": "wiring",
+        "min": 0,
+        "max": 3
+      },
+      {
+        "id": "scrap_metal",
+        "min": 1,
+        "max": 4
+      }
+    ],
+    "risk": {
+      "minorInjury": 0.08,
+      "majorInjury": 0.02,
+      "toolWear": 0.2,
+      "sickness": 0.03
+    },
+    "xpSkill": "Scavenge"
+  }
+]

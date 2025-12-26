@@ -1,0 +1,439 @@
+[
+  {
+    "id": "npc_scavenger",
+    "name": "Zig",
+    "archetype": "Lone Scavenger",
+    "perk": {
+      "id": "perk_scrounger",
+      "name": "Scrounger",
+      "desc": "+10% salvage yield."
+    },
+    "quirk": {
+      "id": "quirk_picky",
+      "name": "Picky Eater",
+      "desc": "Hates low-tier rations."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 5,
+      "Mechanics": 2,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_medic",
+    "name": "Dot",
+    "archetype": "Road Medic",
+    "perk": {
+      "id": "perk_fieldmed",
+      "name": "Field Medic",
+      "desc": "Reduces injury downtime."
+    },
+    "quirk": {
+      "id": "quirk_germaphobe",
+      "name": "Germaphobe",
+      "desc": "Hates dirty water (morale hit)."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 2,
+      "Mechanics": 1,
+      "Cooking": 2,
+      "Medical": 6,
+      "Grit": 3
+    }
+  },
+  {
+    "id": "npc_mechanic",
+    "name": "Reggie",
+    "archetype": "Car Guy",
+    "perk": {
+      "id": "perk_mechanic",
+      "name": "Car Guy",
+      "desc": "Improves Caravan Health."
+    },
+    "quirk": {
+      "id": "quirk_mumbles",
+      "name": "Mumbles",
+      "desc": "Can't quite here him... (morale hit)."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 4,
+      "Mechanics": 5,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_musician",
+    "name": "Sundance",
+    "archetype": "Musician",
+    "perk": {
+      "id": "perk_musician",
+      "name": "Sundance",
+      "desc": "Boosts Morale for entire crew."
+    },
+    "quirk": {
+      "id": "quirk_passiveaggressive",
+      "name": "Passive aggressive",
+      "desc": "Get's lonely. (morale hit)."
+    },
+    "stats": {
+      "Wilderness": 5,
+      "Scavenge": 1,
+      "Mechanics": 1,
+      "Cooking": 5,
+      "Medical": 2,
+      "Grit": 1
+    }
+  },
+  {
+    "id": "npc_tracker",
+    "name": "Rin",
+    "archetype": "Trail Tracker",
+    "perk": {
+      "id": "perk_tracker",
+      "name": "Tracker",
+      "desc": "+15% success on Wilderness jobs."
+    },
+    "quirk": {
+      "id": "quirk_restless",
+      "name": "Restless",
+      "desc": "Hates staying idle; morale drops if idle too long."
+    },
+    "stats": {
+      "Wilderness": 5,
+      "Scavenge": 2,
+      "Mechanics": 1,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_cook",
+    "name": "Mara",
+    "archetype": "Camp Cook",
+    "perk": {
+      "id": "perk_cook",
+      "name": "Seasoned Cook",
+      "desc": "Cooked meals grant +2 extra morale."
+    },
+    "quirk": {
+      "id": "quirk_snacker",
+      "name": "Always Snacking",
+      "desc": "Consumes rations slightly faster."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 1,
+      "Mechanics": 1,
+      "Cooking": 5,
+      "Medical": 2,
+      "Grit": 3
+    }
+  },
+  {
+    "id": "npc_guard",
+    "name": "Holt",
+    "archetype": "Road Guard",
+    "perk": {
+      "id": "perk_guard",
+      "name": "Steady Hand",
+      "desc": "Reduces major injury chance by 10%."
+    },
+    "quirk": {
+      "id": "quirk_paranoid",
+      "name": "Paranoid",
+      "desc": "Dislikes “ruins” tiles; morale -1 there."
+    },
+    "stats": {
+      "Wilderness": 3,
+      "Scavenge": 2,
+      "Mechanics": 1,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 6
+    }
+  },
+  {
+    "id": "npc_rigger",
+    "name": "Jun",
+    "archetype": "Rigger",
+    "perk": {
+      "id": "perk_rigger",
+      "name": "Quick Fix",
+      "desc": "-15% tool wear on jobs."
+    },
+    "quirk": {
+      "id": "quirk_hoarder",
+      "name": "Hoarder",
+      "desc": "Complains when storage is near full."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 3,
+      "Mechanics": 5,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_paramedic",
+    "name": "Sol",
+    "archetype": "Paramedic",
+    "perk": {
+      "id": "perk_paramedic",
+      "name": "First Response",
+      "desc": "Bandages are 20% more effective."
+    },
+    "quirk": {
+      "id": "quirk_queasy",
+      "name": "Queasy",
+      "desc": "Higher sickness chance from dirty water."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 1,
+      "Mechanics": 1,
+      "Cooking": 1,
+      "Medical": 6,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_salvager",
+    "name": "Bex",
+    "archetype": "Scrap Salvager",
+    "perk": {
+      "id": "perk_salvage",
+      "name": "Magnet Hands",
+      "desc": "+15% salvage yield."
+    },
+    "quirk": {
+      "id": "quirk_clumsy",
+      "name": "Clumsy",
+      "desc": "Slightly higher minor injury chance."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 6,
+      "Mechanics": 2,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 3
+    }
+  },
+  {
+    "id": "npc_fisher",
+    "name": "Nico",
+    "archetype": "River Fisher",
+    "perk": {
+      "id": "perk_fisher",
+      "name": "Net Sense",
+      "desc": "+20% fish yield."
+    },
+    "quirk": {
+      "id": "quirk_wet_socks",
+      "name": "Wet Socks",
+      "desc": "Hates riverbed tiles; morale -1 there."
+    },
+    "stats": {
+      "Wilderness": 4,
+      "Scavenge": 1,
+      "Mechanics": 1,
+      "Cooking": 2,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_herbalist",
+    "name": "Edda",
+    "archetype": "Herbalist",
+    "perk": {
+      "id": "perk_herbs",
+      "name": "Herbal Remedies",
+      "desc": "Reduces sickness duration by 10%."
+    },
+    "quirk": {
+      "id": "quirk_fussy_tools",
+      "name": "Fussy About Tools",
+      "desc": "Refuses jobs without a proper tool."
+    },
+    "stats": {
+      "Wilderness": 4,
+      "Scavenge": 1,
+      "Mechanics": 1,
+      "Cooking": 2,
+      "Medical": 4,
+      "Grit": 3
+    }
+  },
+  {
+    "id": "npc_driver",
+    "name": "Gus",
+    "archetype": "Old Driver",
+    "perk": {
+      "id": "perk_driver",
+      "name": "Smooth Ride",
+      "desc": "Morale loss from travel reduced."
+    },
+    "quirk": {
+      "id": "quirk_stubborn",
+      "name": "Stubborn",
+      "desc": "Hard to convince; recruiting costs more (future)."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 1,
+      "Mechanics": 3,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 6
+    }
+  },
+  {
+    "id": "npc_scout",
+    "name": "Ivy",
+    "archetype": "Urban Scout",
+    "perk": {
+      "id": "perk_scout",
+      "name": "Sharp Eyes",
+      "desc": "+10% loot chance when exploring."
+    },
+    "quirk": {
+      "id": "quirk_short_temper",
+      "name": "Short Temper",
+      "desc": "Morale swings are stronger."
+    },
+    "stats": {
+      "Wilderness": 4,
+      "Scavenge": 4,
+      "Mechanics": 1,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_tinkerer",
+    "name": "Pax",
+    "archetype": "Tinkerer",
+    "perk": {
+      "id": "perk_tinker",
+      "name": "Tinker",
+      "desc": "Workbench recipes are 10% faster."
+    },
+    "quirk": {
+      "id": "quirk_distracted",
+      "name": "Distracted",
+      "desc": "Occasionally wastes time (future)."
+    },
+    "stats": {
+      "Wilderness": 1,
+      "Scavenge": 2,
+      "Mechanics": 6,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 3
+    }
+  },
+  {
+    "id": "npc_nurse",
+    "name": "Lena",
+    "archetype": "Clinic Nurse",
+    "perk": {
+      "id": "perk_nurse",
+      "name": "Caregiver",
+      "desc": "Improves recovery while resting."
+    },
+    "quirk": {
+      "id": "quirk_squeamish",
+      "name": "Squeamish",
+      "desc": "Dislikes gore; morale -1 after hunting."
+    },
+    "stats": {
+      "Wilderness": 1,
+      "Scavenge": 1,
+      "Mechanics": 1,
+      "Cooking": 2,
+      "Medical": 5,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_hunter",
+    "name": "Vik",
+    "archetype": "Backwoods Hunter",
+    "perk": {
+      "id": "perk_hunter",
+      "name": "Hunter",
+      "desc": "+15% hunt yield; -5% injury chance on hunt."
+    },
+    "quirk": {
+      "id": "quirk_bloodthirsty",
+      "name": "Bloodthirsty",
+      "desc": "Prefers hunting; morale -1 if no meat."
+    },
+    "stats": {
+      "Wilderness": 5,
+      "Scavenge": 2,
+      "Mechanics": 1,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 5
+    }
+  },
+  {
+    "id": "npc_barterer",
+    "name": "Omi",
+    "archetype": "Barterer",
+    "perk": {
+      "id": "perk_barter",
+      "name": "Barter Sense",
+      "desc": "Better trade outcomes (future)."
+    },
+    "quirk": {
+      "id": "quirk_chatty",
+      "name": "Chatty",
+      "desc": "Improves morale slightly when well-fed."
+    },
+    "stats": {
+      "Wilderness": 2,
+      "Scavenge": 2,
+      "Mechanics": 1,
+      "Cooking": 2,
+      "Medical": 1,
+      "Grit": 4
+    }
+  },
+  {
+    "id": "npc_miner",
+    "name": "Tess",
+    "archetype": "Stonebreaker",
+    "perk": {
+      "id": "perk_miner",
+      "name": "Stonebreaker",
+      "desc": "+20% stone yield."
+    },
+    "quirk": {
+      "id": "quirk_back_pain",
+      "name": "Bad Back",
+      "desc": "Strenuous jobs fatigue faster."
+    },
+    "stats": {
+      "Wilderness": 3,
+      "Scavenge": 3,
+      "Mechanics": 2,
+      "Cooking": 1,
+      "Medical": 1,
+      "Grit": 5
+    }
+  }
+]

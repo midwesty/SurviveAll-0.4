@@ -1,0 +1,17 @@
+[
+  {
+    "id": "rabbit",
+    "name": "Rabbit",
+    "biomes": ["wild_forest", "riverbed", "overgrown_suburb"],
+    "drops": [{ "id": "meat_raw", "min": 1, "max": 2 }]
+  },
+  {
+    "id": "raccoon",
+    "name": "Raccoon",
+    "biomes": ["overgrown_suburb", "collapsed_downtown"],
+    "drops": [
+      { "id": "meat_raw", "min": 1, "max": 2 },
+      { "id": "scrap_metal", "min": 0, "max": 1 }
+    ]
+  }
+]

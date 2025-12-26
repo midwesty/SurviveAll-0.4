@@ -1,0 +1,183 @@
+[
+  {
+  "id": "roof_garden",
+  "name": "Roof Garden",
+  "desc": "Grow crops from seeds using dirt + clean water.",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "roof_garden", "value": 0 }] },
+    {
+      "level": 1,
+      "cost": [{ "id": "wood_plank", "qty": 4 }, { "id": "nails", "qty": 4 }],
+      "effects": [{ "type": "stationLevel", "station": "roof_garden", "value": 1 }]
+    }
+  ]
+},
+{
+  "id": "roof_garden2",
+  "name": "Roof Garden 2",
+  "desc": "Grow crops from seeds using dirt + clean water.",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "roof_garden2", "value": 0 }] },
+    {
+      "level": 1,
+      "cost": [{ "id": "wood_plank", "qty": 4 }, { "id": "nails", "qty": 4 }],
+      "effects": [{ "type": "stationLevel", "station": "roof_garden2", "value": 1 }]
+    }
+  ]
+},
+{
+  "id": "window_garden",
+  "name": "Window Garden",
+  "desc": "Grow crops from seeds using dirt + clean water.",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "window_garden", "value": 0 }] },
+    {
+      "level": 1,
+      "cost": [{ "id": "wood_plank", "qty": 4 }, { "id": "nails", "qty": 4 }],
+      "effects": [{ "type": "stationLevel", "station": "window_garden", "value": 1 }]
+    }
+  ]
+},
+{
+  "id": "toilet_garden",
+  "name": "Toilet Garden",
+  "desc": "Grow crops from seeds using dirt + clean water.",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "toilet_garden", "value": 0 }] },
+    {
+      "level": 1,
+      "cost": [{ "id": "wood_plank", "qty": 4 }, { "id": "nails", "qty": 4 }],
+      "effects": [{ "type": "stationLevel", "station": "toilet_garden", "value": 1 }]
+    }
+  ]
+},
+{
+  "id": "husbandry_tank",
+  "name": "Husbandry Tank",
+  "desc": "Breed fish into fishlings (requires recipes).",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "husbandry_tank", "value": 0 }] },
+    {
+      "level": 1,
+      "cost": [{ "id": "wood_plank", "qty": 6 }, { "id": "scrap_metal", "qty": 10 }, { "id": "glue", "qty": 4 }],
+      "effects": [{ "type": "stationLevel", "station": "husbandry_tank", "value": 1 }]
+    }
+  ]
+},
+{
+  "id": "grill",
+  "name": "Grill",
+  "desc": "A second cooking station for parallel cooking (duplicate stove recipes onto grill).",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "grill", "value": 0 }] },
+    {
+      "level": 1,
+      "cost": [{ "id": "stone", "qty": 10 }, { "id": "scrap_metal", "qty": 8 }],
+      "effects": [{ "type": "stationLevel", "station": "grill", "value": 1 }]
+    }
+  ]
+},
+{
+  "id": "storage",
+  "name": "Storage",
+  "desc": "Shared RV storage holds your supplies.",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "storageCap", "value": 100 }] },
+    {
+      "level": 1,
+      "cost": [
+        { "id": "scrap_metal", "qty": 10 },
+        { "id": "wiring", "qty": 3 }
+      ],
+      "effects": [{ "type": "storageCap", "value": 150 }]
+    },
+    {
+      "level": 2,
+      "cost": [
+        { "id": "scrap_metal", "qty": 25 },
+        { "id": "wiring", "qty": 10 }
+      ],
+      "effects": [{ "type": "storageCap", "value": 200 }]
+    },
+    {
+      "level": 3,
+      "cost": [
+        { "id": "scrap_metal", "qty": 35 },
+        { "id": "wood_plank", "qty": 10 },
+        { "id": "nails", "qty": 20 },
+        { "id": "car_parts", "qty": 4 }
+      ],
+      "effects": [{ "type": "storageCap", "value": 250 }]
+    },
+    {
+      "level": 4,
+      "cost": [
+        { "id": "scrap_metal", "qty": 55 },
+        { "id": "wood_plank", "qty": 18 },
+        { "id": "nails", "qty": 35 },
+        { "id": "car_parts", "qty": 8 }
+      ],
+      "effects": [{ "type": "storageCap", "value": 300 }]
+    },
+    {
+      "level": 5,
+      "cost": [
+        { "id": "scrap_metal", "qty": 85 },
+        { "id": "wood_plank", "qty": 28 },
+        { "id": "nails", "qty": 55 },
+        { "id": "car_parts", "qty": 12 }
+      ],
+      "effects": [{ "type": "storageCap", "value": 350 }]
+    }
+  ]
+},
+  {
+  "id": "bunks",
+  "name": "Bunks",
+  "desc": "More bunks let you recruit more crew.",
+  "levels": [
+    { "level": 0, "cost": [], "effects": [{ "type": "crewCap", "value": 2 }] },
+    { "level": 1, "cost": [{ "id": "fiber", "qty": 12 }, { "id": "scrap_metal", "qty": 8 }], "effects": [{ "type": "crewCap", "value": 4 }] },
+    { "level": 2, "cost": [{ "id": "fiber", "qty": 25 }, { "id": "scrap_metal", "qty": 18 }, { "id": "wiring", "qty": 5 }], "effects": [{ "type": "crewCap", "value": 6 }] },
+
+    { "level": 3, "cost": [{ "id": "fiber", "qty": 40 }, { "id": "scrap_metal", "qty": 30 }, { "id": "wiring", "qty": 10 }], "effects": [{ "type": "crewCap", "value": 8 }] },
+    { "level": 4, "cost": [{ "id": "fiber", "qty": 60 }, { "id": "scrap_metal", "qty": 45 }, { "id": "wiring", "qty": 18 }], "effects": [{ "type": "crewCap", "value": 10 }] }
+  ]
+},
+  {
+    "id": "stove",
+    "name": "Camp Stove",
+    "desc": "Cook food and boil water.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "stove", "value": 0 }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 10 }], "effects": [{ "type": "stationLevel", "station": "stove", "value": 1 }] }
+    ]
+  },
+{
+    "id": "meal_prep",
+    "name": "Food Prep",
+    "desc": "Create meals out of cooked and raw ingredients.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "stationLevel", "station": "stove", "value": 0 }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 10 }], "effects": [{ "type": "stationLevel", "station": "stove", "value": 1 }] }
+    ]
+  },
+  {
+    "id": "purifier",
+    "name": "Water Purifier",
+    "desc": "Purify dirty water more efficiently.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "purifierEnabled", "value": false }] },
+      { "level": 1, "cost": [{ "id": "wiring", "qty": 6 }, { "id": "scrap_metal", "qty": 12 }], "effects": [{ "type": "purifierEnabled", "value": true }] }
+    ]
+  },
+  {
+    "id": "recycler",
+    "name": "Recycler",
+    "desc": "Break down salvage into parts.",
+    "levels": [
+      { "level": 0, "cost": [], "effects": [{ "type": "recyclerEnabled", "value": false }] },
+      { "level": 1, "cost": [{ "id": "scrap_metal", "qty": 18 }, { "id": "wiring", "qty": 7 }], "effects": [{ "type": "recyclerEnabled", "value": true }] }
+    ]
+  }
+]

@@ -1,0 +1,264 @@
+[
+  {
+    "id": "rabbit",
+    "name": "Rabbit",
+    "biomes": [
+      "wild_forest",
+      "riverbed",
+      "overgrown_suburb"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "raccoon",
+    "name": "Raccoon",
+    "biomes": [
+      "overgrown_suburb",
+      "collapsed_downtown"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "id": "scrap_metal",
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  {
+    "id": "deer",
+    "name": "Deer",
+    "biomes": [
+      "wild_forest",
+      "overgrown_suburb"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 2,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "id": "boar",
+    "name": "Wild Boar",
+    "biomes": [
+      "wild_forest",
+      "desert_highway"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 2,
+        "max": 6
+      }
+    ]
+  },
+  {
+    "id": "coyote",
+    "name": "Coyote",
+    "biomes": [
+      "desert_highway",
+      "overgrown_suburb"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 3
+      }
+    ]
+  },
+  {
+    "id": "rattlesnake",
+    "name": "Rattlesnake",
+    "biomes": [
+      "desert_highway",
+      "industrial_scrap"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "id": "fiber",
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  {
+    "id": "opossum",
+    "name": "Opossum",
+    "biomes": [
+      "overgrown_suburb",
+      "collapsed_downtown"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "fox",
+    "name": "Fox",
+    "biomes": [
+      "wild_forest",
+      "riverbed"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "turkey",
+    "name": "Turkey",
+    "biomes": [
+      "wild_forest",
+      "overgrown_suburb"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 3
+      }
+    ]
+  },
+  {
+    "id": "lizard",
+    "name": "Desert Lizard",
+    "biomes": [
+      "desert_highway"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 1
+      }
+    ]
+  },
+  {
+    "id": "scorpion",
+    "name": "Scorpion",
+    "biomes": [
+      "desert_highway",
+      "industrial_scrap"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  {
+    "id": "catfish",
+    "name": "Catfish",
+    "biomes": [
+      "riverbed"
+    ],
+    "drops": [
+      {
+        "id": "fish_raw",
+        "min": 1,
+        "max": 3
+      }
+    ]
+  },
+  {
+    "id": "carp",
+    "name": "Carp",
+    "biomes": [
+      "riverbed"
+    ],
+    "drops": [
+      {
+        "id": "fish_raw",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "bass",
+    "name": "Bass",
+    "biomes": [
+      "riverbed"
+    ],
+    "drops": [
+      {
+        "id": "fish_raw",
+        "min": 1,
+        "max": 3
+      }
+    ]
+  },
+  {
+    "id": "rat",
+    "name": "Big Sewer Rat",
+    "biomes": [
+      "collapsed_downtown",
+      "industrial_scrap"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 0,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "feral_dog",
+    "name": "Feral Dog",
+    "biomes": [
+      "collapsed_downtown",
+      "overgrown_suburb"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 1,
+        "max": 3
+      }
+    ]
+  },
+  {
+    "id": "vulture",
+    "name": "Vulture",
+    "biomes": [
+      "desert_highway",
+      "collapsed_downtown"
+    ],
+    "drops": [
+      {
+        "id": "meat_raw",
+        "min": 0,
+        "max": 2
+      }
+    ]
+  }
+]

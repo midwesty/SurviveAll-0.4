@@ -1,0 +1,157 @@
+[
+  {
+    "id": "stick",
+    "name": "Stick",
+    "category": "resource",
+    "stackSize": 50,
+    "sources": [{ "biomes": ["*"], "methods": ["forage"] }]
+  },
+  {
+    "id": "stone",
+    "name": "Stone",
+    "category": "resource",
+    "stackSize": 50,
+    "sources": [{ "biomes": ["*"], "methods": ["forage"] }]
+  },
+  {
+    "id": "fiber",
+    "name": "Fiber/Reeds",
+    "category": "resource",
+    "stackSize": 50,
+    "sources": [
+      { "biomes": ["*"], "methods": ["forage"] },
+      { "biomes": ["riverbed", "wild_forest"], "methods": ["forage"] }
+    ]
+  },
+  {
+    "id": "scrap_metal",
+    "name": "Scrap Metal",
+    "category": "resource",
+    "stackSize": 50,
+    "sources": [{ "biomes": ["overgrown_suburb", "collapsed_downtown", "industrial_scrap"], "methods": ["scavenge"] }]
+  },
+  {
+    "id": "wiring",
+    "name": "Wiring Bundle",
+    "category": "resource",
+    "stackSize": 50,
+    "sources": [{ "biomes": ["overgrown_suburb", "collapsed_downtown", "industrial_scrap"], "methods": ["scavenge"] }]
+  },
+
+  {
+    "id": "ration_basic",
+    "name": "Basic Ration Pack",
+    "category": "food",
+    "stackSize": 20,
+    "food": { "hunger": 10, "morale": -2, "quality": "low" }
+  },
+  {
+    "id": "water_clean",
+    "name": "Clean Water",
+    "category": "water",
+    "stackSize": 20,
+    "water": { "thirst": 18, "morale": 0 }
+  },
+  {
+    "id": "water_dirty",
+    "name": "Dirty Water",
+    "category": "water",
+    "stackSize": 20,
+    "water": { "thirst": 12, "morale": -2, "dirty": true }
+  },
+  {
+    "id": "meat_raw",
+    "name": "Raw Meat",
+    "category": "food",
+    "stackSize": 20,
+    "food": { "hunger": 8, "morale": -1, "quality": "low", "raw": true }
+  },
+  {
+    "id": "fish_raw",
+    "name": "Raw Fish",
+    "category": "food",
+    "stackSize": 20,
+    "food": { "hunger": 7, "morale": -1, "quality": "low", "raw": true }
+  },
+  {
+    "id": "meal_hearty",
+    "name": "Hearty Meal",
+    "category": "food",
+    "stackSize": 10,
+    "food": { "hunger": 28, "morale": 10, "quality": "high" }
+  },
+
+  {
+    "id": "bandage",
+    "name": "Bandage",
+    "category": "medical",
+    "stackSize": 10,
+    "med": { "minorInjuryReduceMins": 90 }
+  },
+  {
+    "id": "antidote",
+    "name": "Antidote",
+    "category": "medical",
+    "stackSize": 5,
+    "med": { "cureSickness": true },
+    "rarity": "rare"
+  },
+  {
+    "id": "revive_serum",
+    "name": "Revive Serum",
+    "category": "medical",
+    "stackSize": 3,
+    "med": { "revive": true },
+    "rarity": "rare"
+  },
+
+  {
+    "id": "knife_pocket",
+    "name": "Pocket Knife",
+    "category": "tool",
+    "stackSize": 1,
+    "equipSlot": "mainHand",
+    "tool": { "tag": "cutting", "tier": 0, "durabilityMax": 60, "power": 1 }
+  },
+  {
+    "id": "spear_fishing",
+    "name": "Fishing Spear",
+    "category": "tool",
+    "stackSize": 1,
+    "equipSlot": "mainHand",
+    "tool": { "tag": "fishing", "tier": 1, "durabilityMax": 70, "power": 2 }
+  },
+  {
+    "id": "trap_simple",
+    "name": "Simple Trap",
+    "category": "tool",
+    "stackSize": 1,
+    "equipSlot": "utility",
+    "tool": { "tag": "trap", "tier": 1, "durabilityMax": 40, "power": 1 }
+  },
+  {
+    "id": "hatchet_stone",
+    "name": "Stone Hatchet",
+    "category": "tool",
+    "stackSize": 1,
+    "equipSlot": "mainHand",
+    "tool": { "tag": "chopping", "tier": 1, "durabilityMax": 55, "power": 2 }
+  },
+
+  {
+    "id": "clothes_basic",
+    "name": "Basic Clothes",
+    "category": "armor",
+    "stackSize": 1,
+    "equipSlot": "body",
+    "armor": { "tier": 0, "durabilityMax": 80, "protection": 0.05 }
+  },
+  {
+    "id": "boots_scrap",
+    "name": "Scrap Boots",
+    "category": "armor",
+    "stackSize": 1,
+    "equipSlot": "legs",
+    "armor": { "tier": 1, "durabilityMax": 90, "protection": 0.08 }
+  }
+]
